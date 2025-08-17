@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yukti 2025 Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f0f1c;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    .section {
+      border: 2px solid #00f0ff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: linear-gradient(135deg, #1a0033, #000033);
+      transition: 0.3s;
+    }
+    .section h2 {
+      color: #ff00ff;
+      cursor: pointer;
+    }
+    .games {
+      display: none;
+      padding-top: 10px;
+    }
+    .game {
+      border: 1px solid #00f0ff;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #12122b;
+    }
+    .register-btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 8px 16px;
+      background: #00f0ff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+    .register-btn:hover {
+      background: #ff00ff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 style="color: #00f0ff; text-align: center;">Yukti 2025 - Event Sections</h1>
+
+    <!-- Cultural Section -->
+    <div class="section" onclick="toggleSection('cultural')">
+      <h2>Cultural Events</h2>
+      <div id="cultural" class="games">
+        <div class="game">
+          <strong>Solo/Group Dance</strong><br>
+          Date: 07.05.2025, Time: 12:00PM to 1:00PM<br>
+          Fee: ₹100 (Solo), ₹500 (Team)<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Solo/Group Singing</strong><br>
+          Date: 07.05.2025, Time: 11:00AM to 12:00PM<br>
+          Fee: ₹100 (Solo), ₹500 (Team)<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Ramp Walk</strong><br>
+          Date: 07.05.2025, Time: 12:00PM to 4:00PM<br>
+          Fee: ₹500<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Events -->
+    <div class="section" onclick="toggleSection('tech')">
+      <h2>Technical Events</h2>
+      <div id="tech" class="games">
+        <div class="game">
+          <strong>Technical Treasure Hunt</strong><br>
+          Date: 08.05.2025, Time: 11:00AM to 1:00PM<br>
+          Fee: ₹500<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Startup Idea</strong><br>
+          Date: 08.05.2025, Time: 12:00PM to 1:00PM<br>
+          Fee: ₹100<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Photography/Videography</strong><br>
+          Date: 08.05.2025, Time: 11:00AM to 1:00PM<br>
+          Fee: ₹100<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fun Section -->
+    <div class="section" onclick="toggleSection('fun')">
+      <h2>Fun & Gaming Events</h2>
+      <div id="fun" class="games">
+        <div class="game">
+          <strong>Shortfilm</strong><br>
+          Date: 07.05.2025, Time: 3 to 4PM<br>
+          Fee: ₹500<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Carrom</strong><br>
+          Date: 07.05.2025<br>
+          Fee: ₹500<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>E-Sports</strong><br>
+          Date: 07.05.2025<br>
+          Fee: ₹500<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Management Events -->
+    <div class="section" onclick="toggleSection('mgmt')">
+      <h2>Management & Quiz</h2>
+      <div id="mgmt" class="games">
+        <div class="game">
+          <strong>Ad Mad Show</strong><br>
+          Date: 07.05.2025, Time: 2:00PM to 4:00PM<br>
+          Fee: ₹500<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Talent Recognition</strong><br>
+          Date: 07.05.2025, Time: 2:00PM to 4:00PM<br>
+          Fee: ₹100<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+        <div class="game">
+          <strong>Quiz Prelims & Finals</strong><br>
+          Date: 07.05.2025 (Prelims) & 08.05.2025 (Finals)<br>
+          Time: 3:00PM to 5:00PM (Prelims), 12:00PM to 1:00PM (Finals)<br>
+          Fee: ₹100<br>
+          <a href="register.html" class="register-btn">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

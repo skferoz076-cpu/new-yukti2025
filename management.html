@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>technical-section/laecyukti-2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+<style>
+  body {
+    font-family: 'Orbitron', sans-serif;
+  }
+  .montserrat {
+                font-family: 'Montserrat', sans-serif;
+            }
+            .orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+   /* Event Strips */
+          
+   @keyframes flickerSpin { 0% { opacity: 1; transform: rotate(0deg) scale(1); }
+    25% { opacity: 0.6; transform: rotate(20deg) scale(1.2); }
+    50% { opacity: 1; transform: rotate(0deg) scale(1); }
+    75% { opacity: 0.6; transform: rotate(-20deg) scale(1.2); }
+    100% { opacity: 1; transform: rotate(0deg) scale(1); }
+  }
+
+  @keyframes flicker {
+    0% { opacity: 1; text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff; }
+    50% { opacity: 0.5; text-shadow: 0 0 2px #ff00ff; }
+    100% { opacity: 1; text-shadow: 0 0 7px #ff00ff, 0 0 12px #ff00ff; }
+  }
+
+  .magenta-star {
+    @apply text-pink-500 mx-3 text-[18px];
+    animation: flickerSpin 2s infinite ease-in-out;
+  }
+
+  .flicker-star {
+    @apply text-pink-500 text-sm;
+    animation: flicker 1.2s infinite alternate;
+  }
+
+  .orbitron {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .strip-text {
+    font-family: 'Times New Roman', serif;
+    /* font-family: 'Montserrat', sans-serif; */ /* Uncomment this to use Montserrat instead */
+  }
+  @keyframes neonFlicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 5px magenta, 0 0 10px magenta; }
+  50% { opacity: 0.5; text-shadow: none; }
+}
+
+.magenta-star {
+  color: magenta;
+  animation: neonFlicker 0.9s infinite;
+  margin: 0 8px;
+}
+
+
+  footer  {
+    font-family: 'montserrat',sans-serif;
+    padding: 15px 20px;
+    text-align: center;
+    background: #172326;
+  }
+  footer {
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 20px;
+    text-align: center;
+    background: #172326;
+    color: #e0e0e0;
+    width: 100%;
+  }
+
+  footer p {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+
+  footer span {
+    color: #00ffff;
+    font-weight: 500;
+  }
+
+</style>
+<body>
+   <!-- ✅ Responsive Header Section with Banner (Larger) -->
+   <div class="w-full min-h-[15vh] bg-gray-900 text-white px-4 sm:px-6 py-2 sm:py-4 relative overflow-visible">
+    <!-- Flex Container -->
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6 h-full">
+
+        <!-- Logo + Heading -->
+        <div class="flex items-center gap-4 sm:gap-6">
+            <img src="./Sb2-2.png" alt="LAEC Logo"
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-[0_-4px_10px_cyan,0_4px_10px_cyan,-4px_0_10px_magenta,4px_0_10px_magenta]" />
+            <div>
+                <a href="https://www.lingaraj-appaec.in/">
+                    <h1
+                        class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">
+                        LAEC BIDAR
+                    </h1>
+                </a>
+                <p class="text-xs sm:text-sm text-gray-300 mt-1 font-[Montserrat]">
+                    Approved by AICTE and Affiliated to VTU Belgaum
+                </p>
+            </div>
+        </div>
+        
+        <!-- Banner in the Center -->
+        <div class="flex justify-center items-center">
+            <img src="college-banner.png" alt="College Banner"
+                class="h-[50px] sm:h-[70px] w-full max-w-[300px] sm:max-w-[380px] rounded-lg border-2 border-cyan-400 shadow-md">
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-6 sm:gap-8">
+            <a href="#about1" class="text-base hover:text-cyan-400 transition-all duration-200">About</a>
+            <a href="#events" class="text-base hover:text-cyan-400 transition-all duration-200">Events</a>
+            <a href="#register">
+                <button
+                    class="px-4 sm:px-6 py-1 sm:py-2 text-base bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+                    Register
+                </button>
+            </a>
+        </div>
+    </div>
+
+     <!-- Event Strip 1 -->
+<div class="bg-[#1c1c1c] py-2 px-4 text-cyan-400 text-[20px] font-light flex items-center justify-center text-center gap-5 md:gap-10 flex-wrap strip-text">
+  <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+    📅 Event Dates: May 07-08, 2025
+    <span class="magenta-star">★</span>
+    🧩 Treasure Hunt, Quiz, Coding, PPT
+    <span class="magenta-star">★</span>
+    🔄 Event Schedule Updated
+    <span class="flicker-star">✴</span>
+    🧾 Register Now!
+    <span class="magenta-star">★</span>
+    🎮 Gaming Zone Added
+  </marquee>
+</div>
+
+<!-- Event Strip 2 -->
+<div class="bg-[#1c1c1c] py-2 px-4 text-cyan-400 text-[20px] font-light flex items-center justify-center text-center gap-5 md:gap-10 flex-wrap border-t border-cyan-500 relative strip-text">
+  <span class="absolute top-2 left-1 text-white px-3 py-1 text-sm rounded-md z-10 md:top-2 md:left-4 orbitron bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 text-black font-semibold shadow-md">
+    UPDATES
+  </span>
+  <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+    📘 Brochure Updated
+    <span class="magenta-star">★</span>
+    🧾 Registration Open!
+    <span class="magenta-star">★</span>
+    🌙 Don’t Miss the DJ Night
+    <span class="magenta-star">★</span>
+    🧠 Tech Quiz Announced
+    <span class="magenta-star">★</span>
+    🕺 Artists Revealed!
+  </marquee>
+</div>
+<section class="bg-black text-white py-8 px-4">
+    <h2 class="text-3xl font-bold text-center text-cyan-400 mb-6">-🎬-Management Events-🎁 - Technotsav Yukti-2025</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  
+      <!-- Photography/Videography -->
+      <div class="event-box border-2 border-cyan-400 p-3 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
+        <img src="./photo.webp" alt="Photography/Videography" class="w-full h-32 object-cover rounded-xl mb-3">
+        <h3 class="text-xl font-semibold text-pink-400">Photography/Videography</h3>
+        <p class="text-cyan-300 font-[Montserrat]"><strong>Date:</strong> 08.05.2025</p>
+        <p class="text-pink-300 text-sm"><strong>Time:</strong> 10:00 AM to 12:30 PM</p>
+        <p class="text-green-300 text-sm"><strong>Faculty Coordinator:</strong> Gururaj N</p>
+        <p class="text-cyan-300 text-sm"><strong>Student Coordinators:</strong> Shrusti, Rajkumar - 6366349044</p>
+        <div class="flex gap-2 mt-3">
+          <a href="register.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-3 rounded">Register Now</a>
+          <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-3 rounded learn-more-btn">Learn More</button>
+        </div>
+        <div class="poster mt-3 hidden">
+          <img src="./photoposter.jpeg" alt="Photography/Videography Poster" class="w-full rounded-lg">
+        </div>
+      </div>
+  
+      <!-- Short Film Making -->
+      <div class="event-box border-2 border-cyan-400 p-3 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
+        <img src="./shortfilm.jpg" alt="Short Film Making" class="w-full h-32 object-cover rounded-xl mb-3">
+        <h3 class="text-xl font-semibold text-pink-400">Short Film Making</h3>
+        <p class="text-cyan-300 font-[Montserrat]"><strong>Date:</strong> 0.05.2025</p>
+        <p class="text-pink-300 text-sm"><strong>Time:</strong> 10:00 AM to 1:00 PM</p>
+        <p class="text-green-300 text-sm"><strong>Faculty Coordinator:</strong> Ester Rani - 9980143184</p>
+        <p class="text-cyan-300 text-sm"><strong>Student Coordinators:</strong> veeresh - 6300788302, vivek - 8317344026</p>
+        <div class="flex gap-2 mt-3">
+          <a href="register.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-3 rounded">Register Now</a>
+          <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-3 rounded learn-more-btn">Learn More</button>
+        </div>
+        <div class="poster mt-3 hidden">
+          <img src="./shortfposter.jpeg" alt="Short Film Making Poster" class="w-full rounded-lg">
+        </div>
+      </div>
+  
+      <!-- Talent Recognition (HR Round) -->
+      <div class="event-box border-2 border-cyan-400 p-3 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
+        <img src="./talent.avif" alt="Talent Recognition" class="w-full h-32 object-cover rounded-xl mb-3">
+        <h3 class="text-xl font-semibold text-pink-400">Talent Recognition (HR Round)</h3>
+        <p class="text-cyan-300 font-[Montserrat]"><strong>Date:</strong> 07.05.2025</p>
+        <p class="text-pink-300 text-sm"><strong>Time:</strong> 1:00 PM to 3:00 PM</p>
+        <p class="text-green-300 text-sm"><strong>Faculty Coordinator:</strong> Amarnath - 9663440962</p>
+        <p class="text-cyan-300 text-sm"><strong>Student Coordinators:</strong> shivkumar - 9353728483, Priya - 7019898958</p>
+        <div class="flex gap-2 mt-3">
+          <a href="register.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-3 rounded">Register Now</a>
+          <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-3 rounded learn-more-btn">Learn More</button>
+        </div>
+        <div class="poster mt-3 hidden">
+          <img src="./talent.avif" alt="Talent Recognition Poster" class="w-full rounded-lg">
+        </div>
+      </div>
+  
+      <!-- Ad Mad Show -->
+      <div class="event-box border-2 border-cyan-400 p-3 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
+        <img src="./admad.jpg" alt="Ad Mad Show" class="w-full h-32 object-cover rounded-xl mb-3">
+        <h3 class="text-xl font-semibold text-pink-400">Ad Mad Show</h3>
+        <p class="text-cyan-300 font-[Montserrat]"><strong>Date:</strong> 07.05.2025</p>
+        <p class="text-pink-300 text-sm"><strong>Time:</strong> 3:00 PM to 5:00 PM</p>
+        <p class="text-green-300 text-sm"><strong>Faculty Coordinator:</strong> Sangamesh K.</p>
+        <p class="text-cyan-300 text-sm"><strong>Student Coordinators:</strong> Bhagyashree - 8931220240, Dattatreya - 8861861464</p>
+        <div class="flex gap-2 mt-3">
+          <a href="register.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-3 rounded">Register Now</a>
+          <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-3 rounded learn-more-btn">Learn More</button>
+        </div>
+        <div class="poster mt-3 hidden">
+          <img src="./admadposter.jpeg" alt="Ad Mad Show Poster" class="w-full rounded-lg">
+        </div>
+      </div>
+  
+      <!-- 3D Vision -->
+      <div class="event-box border-2 border-cyan-400 p-3 rounded-2xl bg-gradient-to-br from-black via-gray-900 to-black shadow-lg hover:shadow-cyan-500/50 transition-all duration-300">
+        <img src="./3dvision.png" alt="3D Vision" class="w-full h-32 object-cover rounded-xl mb-3">
+        <h3 class="text-xl font-semibold text-pink-400">3D Vision</h3>
+        <p class="text-cyan-300 font-[Montserrat]"><strong>Date:</strong> 08.05.2025</p>
+        <p class="text-pink-300 text-sm"><strong>Time:</strong> 1:00 PM to 3:00 PM</p>
+        <p class="text-green-300 text-sm"><strong>Faculty Coordinator:</strong> Mr. Sudhir A - 7026483086</p>
+        <p class="text-cyan-300 text-sm"><strong>Student Coordinators:</strong> Akhilesh - 9380151807, Md Shaik Akhtar - 8050300745</p>
+        <div class="flex gap-2 mt-3">
+          <a href="register.html" class="bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 px-3 rounded">Register Now</a>
+          <button class="bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-3 rounded learn-more-btn">Learn More</button>
+        </div>
+        <div class="poster mt-3 hidden">
+          <img src="./3dposter.jpeg" alt="3D Vision Poster" class="w-full rounded-lg">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  <!-- ✅ Fix the Toggle Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".learn-more-btn");
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const poster = btn.closest(".event-box").querySelector(".poster");
+          poster.classList.toggle("hidden");
+        });
+      });
+    });
+  </script>
+  <div class="flex justify-center mt-8">
+    <a href="https://laecyukti-2025.in/index.html" class="px-6 py-3 bg-cyan-600 text-white font-semibold rounded-xl shadow-lg hover:bg-emerald-700 transition duration-300">
+      ← Back to Home
+    </a>
+  </div>
+  
+<footer>
+    <p>© 2025 LAEC Yukti Fest | All Rights Reserved</p>
+    <p style="font-family: 'montserrat',sans-serif; font-size: 12px; color: #e0e0e0;">Designed and Developed by
+        <span style="color: #00ffff" ;>Sk feroze (EEE) </span> </p>
+  </footer>
+      
+  </body>
+  </html>  

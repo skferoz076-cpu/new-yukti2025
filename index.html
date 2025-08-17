@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technotsav Yukti-2025 | LAEC Bidar</title>
+    <link rel="icon" href="./yukti-logo12.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Mobile friendly overrides */
+        @media (max-width: 768px) {
+            .header-logo-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 0px;
+            }
+
+            /* .middle-banner img {
+                width: 100%;
+                height: auto;
+                display: inline-block;
+                margin: 10px 35px;
+            } */
+            .montserrat {
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                padding: 0;
+                margin: 10px 0;
+            }
+
+            nav ul li,
+            nav ul button {
+                display: block;
+                margin: 5px 0;
+            }
+
+            /* .hero-section {
+                flex-direction: column;
+                padding: 20px;
+                height: auto;
+            } */
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .kite h1 {
+                font-size: 2.2rem;
+            }
+
+            .artist-box {
+                flex-direction: column;
+                margin: 20px;
+                padding: 10px;
+            }
+
+            .artist-image img {
+                width: 90%;
+                margin: 10px auto;
+            }
+
+            .section-box {
+                max-width: 95%;
+                padding: 15px;
+            }
+        }
+        .strip-text {
+    font-family: 'Times New Roman', serif;
+    /* font-family: 'Montserrat', sans-serif; */ /* Uncomment this to use Montserrat instead */
+  }
+  @keyframes neonFlicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 5px magenta, 0 0 10px magenta; }
+  50% { opacity: 0.5; text-shadow: none; }
+}
+
+.magenta-star {
+  color: magenta;
+  animation: neonFlicker 0.9s infinite;
+  margin: 0 8px;
+}
+    </style>
+</head>
+<script>
+    // Toggle dropdown for categories
+    document.querySelectorAll('.events-category h3').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+
+<script>
+    // Scroll Reveal Effect
+    window.addEventListener('scroll', function () {
+        let reveals = document.querySelectorAll('.reveal');
+
+        for (let i = 0; i < reveals.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = reveals[i].getBoundingClientRect().top;
+            let elementVisible = 100;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    });
+
+    // Button & Link Click Animation
+    document.querySelectorAll(".btn, a").forEach((element) => {
+        element.addEventListener("click", function (e) {
+            let ripple = document.createElement("span");
+            ripple.classList.add("ripple");
+            this.appendChild(ripple);
+
+            let x = e.clientX - this.getBoundingClientRect().left;
+            let y = e.clientY - this.getBoundingClientRect().top;
+
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+
+</script>
+
+<style>
+    /* Dropdown Arrow */
+    .arrow {
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .active .arrow {
+        transform: rotate(180deg);
+    }
+
+
+
+    .ticker {
+        display: inline-block;
+        animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+    @keyframes gradient-slide {
+    0% {
+        background-position: -100% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.animate-gradient-slide {
+    background: linear-gradient(90deg, cyan, magenta);
+    background-size: 200% 200%;
+    animation: gradient-slide 3s linear infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+/* Background slideshow animation */
+@keyframes slideShow {
+    0% { background-image: url('./yukti6.jpg'); }
+    20% { background-image: url('./yukti7.jpg'); }
+    40% { background-image: url('./yukti3.jpg'); }
+    60% { background-image: url('./yukti8.jpg'); }
+    80% { background-image: url('./yukti5.jpeg'); }
+}
+</style>
+
+<body>
+<!-- 🎬 Superheroic Cyberpunk Popup (Smaller Version) -->
+<div id="popup-banner" class="fixed inset-0 z-[9999] bg-black bg-opacity-50 flex items-start justify-center pt-[25vh] p-4">
+    <div class="relative bg-gradient-to-tr from-[#0f0c29] via-[#302b63] to-[#24243e] border-2 border-pink-500 rounded-2xl p-6 w-full max-w-md shadow-[0_0_30px_#ff00ff] text-white font-['Orbitron']">
+  
+      <!-- ❌ Close Button -->
+      <button id="close-popup" class="absolute top-3 right-3 bg-pink-600 text-white rounded-full w-7 h-7 text-lg font-extrabold flex items-center justify-center hover:bg-pink-400 transition-all duration-300">
+        &times;
+      </button>
+  
+      <!-- 🚀 Popup Content -->
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-cyan-400 animate-pulse drop-shadow-md">
+          🚀 TECHNOTSAV YUKTI 2025
+        </h2>
+  
+        <p class="text-base md:text-lg mb-4 tracking-widest uppercase">7th & 8th May | LAEC Bidar</p>
+  
+  
+        <!-- ⏳ Countdown Timer -->
+        <div id="timer" class="flex justify-center gap-3 mb-6 text-base md:text-xl font-mono tracking-widest"></div>
+  
+        <!-- ✨ Daily AI Fest Quote -->
+        <div id="quote" class="italic text-pink-300 text-base mb-6 font-semibold"></div>
+  
+        <!-- 📸 Hype Images Gallery (Optional Mini Size) -->
+        <div id="hype-images" class="flex flex-wrap gap-2 justify-center">
+          <!-- Images will be added dynamically -->
+        </div>
+  
+        <p class="text-xs text-gray-400 mt-4 tracking-wide">New adventures uploading every day... 📸</p>
+      </div>
+  
+    </div>
+  </div>
+  
+  <!-- ✨ Marvel Cinematic Popup Scripts -->
+  <script>
+    // Popup Display
+    document.getElementById('popup-banner').style.display = 'flex';
+  
+    // Close Popup
+    document.getElementById('close-popup').addEventListener('click', function() {
+      document.getElementById('popup-banner').style.display = 'none';
+    });
+  
+    // Countdown Timer
+    const targetDate = new Date("May 7, 2025 09:00:00").getTime();
+    const timer = document.getElementById('timer');
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+  
+      if (distance < 0) {
+        timer.innerHTML = "🎉 Fest is Live!";
+        return;
+      }
+  
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      timer.innerHTML = `
+        <div><span class="block text-xl md:text-2xl">${days}</span><small>Days</small></div>
+        <div><span class="block text-xl md:text-2xl">${hours}</span><small>Hours</small></div>
+        <div><span class="block text-xl md:text-2xl">${minutes}</span><small>Minutes</small></div>
+        <div><span class="block text-xl md:text-2xl">${seconds}</span><small>Seconds</small></div>
+      `;
+    }, 1000);
+  
+    // GPT-3 Style Daily Quotes
+    const hypeQuotes = [
+      "Assemble your greatness — Yukti 2025 awaits!",
+      "Where technology meets destiny — Welcome hero!",
+      "The future is not given. It's made — at Technotsav.",
+      "Unleash your power. Ignite your legacy.",
+      "This May, legends will rise at LAEC!",
+      "Hack your limits. Rewrite your story!",
+      "Innovation is our infinity stone.",
+      "Heroes aren't born — They are registered for Yukti!"
+    ];
+  
+    const quoteEl = document.getElementById('quote');
+    const today = new Date().getDate();
+    const quoteIndex = today % hypeQuotes.length;
+    quoteEl.innerHTML = `"${hypeQuotes[quoteIndex]}"`;
+  
+    // Hype Images
+    const dailyImages = [
+      { src: 'popup1.jpg', alt: 'Sports Arena' },
+      { src: 'popup2.jpg', alt: 'Main Poster' },
+      { src: 'popup3.jpg', alt: 'Hackathon' },
+      { src: 'popup4.jpg', alt: 'Treasure Hunt' }
+    ];
+  
+    const imageContainer = document.getElementById('hype-images');
+    dailyImages.forEach(img => {
+      const imgEl = document.createElement('img');
+      imgEl.src = img.src;
+      imgEl.alt = img.alt;
+      imgEl.className = "w-16 h-16 object-cover rounded-lg shadow-md hover:scale-110 transition-transform duration-300";
+      imageContainer.appendChild(imgEl);
+    });
+  
+  </script>
+  
+    
+   <!-- 🌌 Futuristic Yukti Loader -->
+<div id="loader-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-black">
+    <div class="relative w-60 h-60">
+  
+      <!-- 🔄 Rotating Outer Circle -->
+      <div class="absolute inset-0 rounded-full border-t-4 border-cyan-400 border-opacity-30 animate-spin" style="animation-duration: 3s;"></div>
+  
+      <!-- 🚀 Static Y Logo -->
+      <img src="loader.png" alt="Yukti Y Logo" class="relative z-10 w-full h-full object-contain" />
+  
+      <!-- 💡 Loading Text -->
+      <p class="absolute bottom-[-3rem] left-1/2 transform -translate-x-1/2 text-pink-500 text-lg font-bold animate-pulse tracking-widest">
+        LOADING...
+      </p>
+  
+    </div>
+  </div>
+      
+  <!-- ✅ Responsive Header Section with Banner (Larger) -->
+<div class="w-full min-h-[15vh] bg-gray-900 text-white px-4 sm:px-6 py-2 sm:py-4 relative overflow-visible">
+    <!-- Flex Container -->
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6 h-full sm:h-[calc(100%-5%)]">
+    
+        <!-- Logo + Heading -->
+        <div class="flex items-center gap-4 sm:gap-6">
+            <img src="./Sb2-2.png" alt="LAEC Logo"
+                class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-[0_-4px_10px_cyan,0_4px_10px_cyan,-4px_0_10px_magenta,4px_0_10px_magenta]" />
+            <div>
+                <a href="https://www.lingaraj-appaec.in/">
+                    <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent animate-gradient-slide">
+                        LAEC BIDAR
+                    </h1>
+                </a>
+                <p class="text-xs sm:text-sm text-gray-300 mt-1 font-[Montserrat]">
+                    Approved by AICTE and Affiliated to VTU Belgaum
+                </p>
+            </div>
+        </div>
+    
+        <!-- Banner in the Center -->
+        <div class="flex justify-center items-center">
+            <img src="college-banner.png" alt="College Banner"
+                class="h-[50px] sm:h-[70px] w-full max-w-[300px] sm:max-w-[380px] rounded-lg border-2 border-cyan-400 shadow-md">
+        </div>
+    
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-6 sm:gap-8">
+            <a href="#about1" class="text-base hover:text-cyan-400 transition-all duration-200">About</a>
+            <a href="#events" class="text-base hover:text-cyan-400 transition-all duration-200">Events</a>
+            <a href="#register">
+                <button
+                    class="px-4 sm:px-6 py-1 sm:py-2 text-base bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
+                    Register
+                </button>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Hamburger Menu (Mobile) -->
+    <div x-data="{ open: false }" class="lg:hidden mt-2">
+        <button @click="open = !open" class="focus:outline-none">
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    
+        <div x-show="open" @click.away="open = false" x-transition
+            class="absolute top-20 left-0 w-64 h-50 bg-gray-900 text-gray-100 p-6 space-y-5 shadow-2xl z-50 animate-gradient-x rounded-xl">
+            <h2 class="text-xl font-bold text-gray-100">Menu</h2>
+            <nav class="flex flex-col gap-4">
+                <a href="#about1"
+                    class="text-base font-semibold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">About</a>
+                <a href="#events"
+                    class="text-base font-semibold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">Events</a>
+                <a href="#register"
+                    class="text-base font-semibold bg-gradient-to-r from-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">Register</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- Event Strip 1 -->
+<div class="bg-[#1c1c1c] py-2 px-4 text-cyan-300 text-[20px] font-light flex items-center justify-center text-center gap-5 md:gap-10 flex-wrap strip-text sm:h-[calc(100%-5%)]">
+    <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+      📅 Event Dates: May 07-08, 2025
+      <span class="magenta-star">★</span>
+      🧩 Treasure Hunt, Quiz, Coding, PPT
+      <span class="magenta-star">★</span>
+      🔄 Event Schedule Updated
+      <span class="flicker-star">✴</span>
+      🧾 Register Now!
+      <span class="magenta-star">★</span>
+      🎮 Gaming Zone Added
+    </marquee>
+</div>
+
+<!-- Event Strip 2 -->
+<div class="bg-[#1c1c1c] py-2 px-4 text-cyan-300 text-[20px] font-light flex items-center justify-center text-center gap-5 md:gap-10 flex-wrap border-t border-cyan-500 relative strip-text sm:h-[calc(100%-5%)]">
+    <span class="absolute top-2 left-1 text-white px-3 py-1 text-sm rounded-md z-10 md:top-2 md:left-4 orbitron bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 text-black font-semibold shadow-md">
+      UPDATES
+    </span>
+    <marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();">
+      📘 Brochure Updated
+      <span class="magenta-star">★</span>
+      🧾 Registration Open!
+      <span class="magenta-star">★</span>
+      🌙 Don’t Miss the DJ Night
+      <span class="magenta-star">★</span>
+      🧠 Tech Quiz Announced
+      <span class="magenta-star">★</span>
+      🕺 Artists Revealed!
+    </marquee>
+</div>
+
+    <section class="hero-section">
+        <div class="slideshow-bg"></div>
+        <div class="hero-content">
+            <span class="laec">
+                <h1>LAEC</h1>
+            </span>
+            <h2>BIDAR</h2>
+            <p style="font-size: 23px; font-weight: 400;">Presents</p>
+            <div class="kite">
+                <h1>TECHN<span class="stylish-o">O</span>TSAV YU<span class="stylish-k">K</span>TI - 2<span
+                        class="stylish-zero">0</span>25</h1>
+            </div>
+
+            <h3 style="font-size: 40px; letter-spacing: 2px;">Redefining Ideas, Reshaping Futures</h3>
+            <br>
+            <p class="hero-presents">REGIONAL LEVEL TECHNO-MANAGEMENT-CULTURAL FEST</p>
+            
+        </div>
+    </section>
+    
+
+    <section id="hero" class="reveal">
+        <h2>Welcome to Technotsav Yukti Fest 2025</h2>
+        <p>The biggest tech and cultural fest of LAEC is here!</p>
+        <a href="#register" class="btn">Register Now</a>
+    </section>
+    <div style="border-top: 1px solid #0ff5;"></div>
+    
+    <br>
+
+    <!-- About Section -->
+    <section id="about1" class="text-center py-10 px-4 sm:px-8">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-300 bg-clip-text text-transparent mb-8">
+            About Yukti Fest
+        </h2>
+    </section>
+    
+    <!-- Description Section -->
+    <section id="descrp"
+        class="max-w-3xl mx-auto bg-gray-900 text-white rounded-xl p-6 sm:p-10 shadow-xl reveal font-['montserrat'] border border-cyan-400 transition duration-300 ease-in-out 
+        hover:shadow-[0_0_15px_#00ffff,0_0_30px_#ff00ff]">
+        <p class="text-lg leading-relaxed">
+            <span class="text-cyan-300 font-semibold">🔷 TECHNOTSAV YUKTI-2025</span>: Unleashing Innovation and Energy<br>
+    
+            Hosted by <span class="text-pink-400 font-medium">Lingaraj Appa Engineering College, Bidar</span>, the
+            ultimate fusion of innovation, creativity, and competition! Held at the heart of Bidar’s pride — <span
+                class="text-pink-400 font-medium">Lingaraj Appa Engineering College</span> — this year’s fest is set to
+            break boundaries and light up the campus with futuristic energy.
+            <br>
+            🌀 From mind-bending tech challenges to adrenaline-pumping sports events, <span
+                class="text-cyan-300">Yukti</span> isn't just a fest — it's a <span
+                class="text-pink-400">movement</span>.<br>
+            Whether you're a <span class="text-green-400">code wizard</span>, a <span class="text-green-400">creative
+                rebel</span>, or a <span class="text-green-400">sports beast</span>, <span
+                class="text-pink-400 font-semibold">YUKTI-2025</span> is the platform where your talent gets the
+            spotlight it deserves.
+        </p>
+    </section>
+    
+    <br>
+    <div style="border-top: 3px solid #00ffff; margin-top: 40px;"></div>
+    <br>
+    <!-- TailwindCSS Artist Announcement Section -->
+    <section class="bg-gray-800 text-white font-['Orbitron'] px-4 py-24 relative overflow-hidden">
+        <div class="w-[90%] mx-auto space-y-24">
+          
+         
+      
+          <!-- Suhana Syed -->
+          <div data-aos="fade-up" data-aos-duration="1200" class="space-y-8">
+            <h2 class="text-4xl sm:text-7xl md:text-6xl text-cyan-400 text-center break-words px-2 font-bold tracking-widest">
+              ARTIST ANNOUNCEMENT
+            </h2>
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-[#111]/60 backdrop-blur-md rounded-3xl p-8 md:p-14 shadow-2xl border border-cyan-500 hover:shadow-[0_0_30px_#00ffff,0_0_60px_#ff00ff] transition-all duration-500 ease-in-out">
+              <div class="w-full md:w-1/3 rounded-2xl overflow-hidden">
+                <img src="suhana-syed.jpeg" alt="Suhana Syed" class="w-full h-auto object-cover rounded-2xl border-2 border-cyan-400 hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="w-full md:w-2/3 space-y-6">
+                <h3 class="text-3xl md:text-4xl text-white font-bold">
+                  Featured Artist: <span class="text-white">Suhana Syed</span>
+                </h3>
+                <p class="text-cyan-300 text-lg font-['montserrat']">
+                  We are electrified to announce that the sensational voice of <span class="text-yellow-400 font-['Orbitron']">' Suhana Syed '</span> will be lighting up the Yukti 2025 stage! Known for her soul-stirring Sufi melodies and electrifying performances, Suhana brings a fusion of <span class="text-pink-400">' tradition and trance '</span> that leaves audiences mesmerized.
+                </p>
+                <p class="text-cyan-300 text-lg font-['montserrat']">
+                  <strong class="text-[#00ffff]">Date:</strong> May 7, 2025<br>
+                  <strong class="text-[#00ffff]">Venue:</strong> LAEC Campus Stage<br>
+                  <strong>Follow Us:</strong> <span class="text-yellow-400">@LAEC_COMMUNITY</span>
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Rajat Hegde -->
+          <div data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" class="flex flex-col md:flex-row items-center md:items-start gap-8 bg-[#111]/60 backdrop-blur-md rounded-3xl p-8 md:p-14 shadow-2xl border border-pink-500 hover:shadow-[0_0_30px_#00ffff,0_0_60px_#ff00ff] transition-all duration-500 ease-in-out">
+            <div class="w-full md:w-1/3 rounded-2xl overflow-hidden">
+              <img src="ranjeeth-hegde.jpeg" alt="Rajat Hegde" class="w-full h-auto object-cover rounded-2xl border-2 border-pink-400 hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="w-full md:w-2/3 space-y-6">
+              <h3 class="text-3xl md:text-4xl text-white font-bold">
+                Special Musical Act By: <span class="text-white">RAJAT HEGDE</span>
+              </h3>
+              <p class="text-pink-300 text-lg font-['montserrat']">
+                Gear up for an unforgettable musical explosion by the dynamic <span class="text-yellow-400 font-['Orbitron']">Rajat Hegde</span> — a powerhouse performer known for setting stages on fire with his voice and energy.
+              </p>
+              <p><strong class="text-[#00ffff]">Achievements:</strong></p>
+              <ul class="list-disc list-inside text-pink-300 pl-4 font-['montserrat'] space-y-1">
+                <li>Winner of Campus Idol (2023)</li>
+                <li>Viral Kannada Fusion Track – "Hrudaya Pulse"</li>
+                <li>YouTube Rising Star 2024</li>
+              </ul>
+              <p class="text-pink-300 text-lg font-['montserrat']">
+                <strong class="text-[#00ffff]">Venue:</strong> LAEC Campus<br>
+                <strong class="text-[#00ffff]">Date:</strong> May 7, 2025<br>
+                <strong class="text-[#00ffff]">Time:</strong> 7:30 PM onwards
+              </p>
+              <p class="text-pink-300 text-lg">
+                Follow us on <span class="text-yellow-400">@LAEC_COMMUNITY</span> for updates
+              </p>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+      
+      <!-- Add AOS Animation library -->
+      <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+      <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+      
+    
+    
+
+    <!-- Divider -->
+    <div class="border-t-2 border-cyan-400 my-8"></div>
+
+    <!-- Event Sections -->
+    <div id="events" class="px-4 sm:px-8 py-10">
+        <h1 class="text-center text-3xl font-bold mb-10 bg-gradient-to-r from-cyan-400 via-pink-400 to-cyan-400 bg-[length:200%] bg-clip-text text-transparent animate-gradient-slide">
+            Yukti 2025 - Events Section
+          </h1>          
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Cultural Section -->
+            <div class="bg-gray-900 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+                onclick="window.location.href='cultural.html'">
+                <div class="p-4">
+                    <img src="cultural.jpg" alt="Cultural Events" class="rounded-md w-full h-48 object-cover mb-4">
+                    <h2 class="text-white text-xl font-semibold text-center">Cultural Events</h2>
+                </div>
+            </div>
+
+            <!-- Tech Events -->
+            <div class="bg-gray-900 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+                onclick="window.location.href='tech.html'">
+                <div class="p-4">
+                    <img src="technical.jpg" alt="Technical Events" class="rounded-md w-full h-48 object-cover mb-4">
+                    <h2 class="text-white text-xl font-semibold text-center">Technical Events</h2>
+                </div>
+            </div>
+
+            <!-- Fun & Gaming -->
+            <div class="bg-gray-900 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+                onclick="window.location.href='sports1.html'">
+                <div class="p-4">
+                    <img src="sports1.jpg" alt="Sports Events" class="rounded-md w-full h-48 object-cover mb-4">
+                    <h2 class="text-white text-xl font-semibold text-center">E-Sports and Games</h2>
+                </div>
+            </div>
+
+            <!-- Management -->
+            <div class="bg-gray-900 rounded-xl shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+                onclick="window.location.href='management.html'">
+                <div class="p-4">
+                    <img src="management.jpg" alt="Management Events" class="rounded-md w-full h-48 object-cover mb-4">
+                    <h2 class="text-white text-xl font-semibold text-center">Management events</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t-2 border-cyan-400 mt-24 mb-10"></div>
+
+    <!-- Register Section -->
+    <section id="register" class="flex justify-center items-center text-center py-12 bg-gray-800">
+        <div class="bg-gray-900 p-8 rounded-lg shadow-xl w-full max-w-xl">
+            <h2 class="text-2xl font-bold text-cyan-300 mb-4">Register Now</h2>
+            <p class="text-white mb-6">Join the biggest fest of the year!</p>
+            <a href="register.html"
+   class="inline-block bg-orange-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-orange-600 hover:shadow-lg hover:shadow-amber-400/60 transition duration-300">
+   Register here
+</a>
+  </div>
+    </section>
+    <script>
+        window.addEventListener("load", function () {
+          const loader = document.getElementById("loader-screen");
+          loader.style.display = "none";
+        });
+      </script>
+      <!-- Footer Section -->
+<footer class="bg-gray-900 text-gray-200 py-8 px-4">
+    <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+        <!-- College Info -->
+        <div class="text-center sm:text-left">
+            <h2 class="text-xl font-bold text-cyan-400">Lingaraj Appa Engineering College, Bidar</h2>
+            <p class="text-sm mt-2">
+                Approved by AICTE | Affiliated to VTU Belgaum
+            </p>
+            <p class="text-sm mt-2">© 2025 LAEC Yukti Fest | All Rights Reserved</p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="text-center sm:text-left">
+            <h3 class="text-lg font-semibold text-cyan-400">Quick Links</h3>
+            <ul class="mt-2">
+                <li><a href="https://www.lingaraj-appaec.in/" class="text-sm text-gray-400 hover:text-cyan-400 transition-all duration-200">Official Website</a></li>
+                <li><a href="/" class="text-sm text-gray-400 hover:text-cyan-400 transition-all duration-200">Home</a></li>
+                <li><a href="#about1" class="text-sm text-gray-400 hover:text-cyan-400 transition-all duration-200">About Us</a></li>
+                <li><a href="#events" class="text-sm text-gray-400 hover:text-cyan-400 transition-all duration-200">Events</a></li>
+                <li><a href="#register" class="text-sm text-gray-400 hover:text-cyan-400 transition-all duration-200">Register</a></li>
+            </ul>
+        </div>
+        
+        <!-- Footer Credit -->
+        <div class="text-center sm:text-right text-sm mt-4 sm:mt-0">
+            <p class="text-gray-400">Website Designed & Developed by <strong class="text-cyan-400"> Sk Feroze [EEE]</strong></p>
+        </div>
+    </div>
+</footer>
+
+
+    
+</body>
+</html>
